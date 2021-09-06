@@ -1,0 +1,37 @@
+:root{
+    --results-columns: 2;
+}
+.ListOfGifs{
+    
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    grid-template-rows: masonry;
+    grid-gap: 16px;
+    align-items: center;
+    justify-content:center;
+    
+}
+.ListOfGifs-item{
+    
+    background-color: #eee;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 40px;
+}
+@media screen and (max-width: 55rem){
+    .ListOfGifs{
+    
+        grid-template-columns: repeat(auto-fit,minmax(100px,1fr));
+    }
+}
+@media(min-width: 600px){
+    :root{
+        --results-columns: 3;
+    }
+}
+@media(min-width: 800px){
+    :root{
+        --results-columns: 4;
+    }
+}
