@@ -105,6 +105,12 @@ a{
   color: #09f;
   font-size: 14px;
 }
+#logo{
+  color: coral;
+  font-family: 'Lobster', cursive;
+  transform: rotate(-3deg);
+  letter-spacing: 0.3em;
+}
 
 @media screen and (max-width: 55rem){
   .content{

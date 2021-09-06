@@ -1,5 +1,5 @@
 import React, {useCallback} from "react"
-import {useLocation} from "wouter"
+// import {useLocation} from "wouter"
 import {useGifs} from '../../hooks/useGifs' // funcion retornada sin default 
 import ListOfGifs from '../../components/ListOfGifs'
 import TrendingSearches from "../../components/TrendingSearches"
@@ -11,12 +11,10 @@ const POPULAR_GIFS = ['tetonas','Matrix','Linda','Colombia','Chile','Venezuela']
 export default function Home(){
     // const [keyword,setKeyword] = useState('')
    
-    const [path, pushLocation] = useLocation()
+    
     const {loading, gifs} = useGifs()
 
-    const handleSubmit = useCallback(({keyword,limit})=>{
-        pushLocation(`/search/${keyword}/${limit}`)
-    },[pushLocation])// se usa useCallback, para que solo cuando cambie el pushLocation
+   
     
  
    
@@ -26,7 +24,7 @@ export default function Home(){
         <Helmet>
             <title>Home | Giffy</title>
         </Helmet>
-       <SearchForm onSubmit={handleSubmit}/>
+       <SearchForm />
         <div className='content'>
             <div className="List">
         

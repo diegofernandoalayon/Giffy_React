@@ -24,8 +24,7 @@ function App() {
         <section className="App-content">
           <Link to="/">
             <figure className="App-logo">
-              <img alt="logo giffy" src="/logo512.png" />
-              <h3>Giffy</h3>
+              <h1 id='logo'>Giffy</h1>
             </figure>
           </Link>
           <GifsContextProvider>
