@@ -33,7 +33,7 @@ function App() {
               path="/"
               />
             <Route 
-              path= "/search/:keyword/:limit"
+              path= "/search/:keyword/:limit/:rating?" // el interrogante hace que el segmento sea opcional
               component={SearchResults}/>
             <Route 
               component = {Detail} //ruta para el detalle

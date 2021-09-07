@@ -4,7 +4,7 @@ import GifsContext from "../context/GifsContext"
 
 // esto es un custom hook
 const INITIAL_PAGE = 0
-export function useGifs({keyword,limit} = {keyword: null}){
+export function useGifs({keyword,limit,rating} = {keyword: null}){
 
 const [loading, setLoading] = useState(false)
 const [loadingNextPage, setLoadingNextpage] = useState(false)
@@ -15,24 +15,24 @@ const {gifs, setGifs} = useContext(GifsContext)
 const keywordToUse = keyword || localStorage.getItem('lastKeyword') || "random"
 useEffect(()=>{
     setLoading(true)
-    getGifs({keyword: keywordToUse,limit})
+    getGifs({keyword: keywordToUse,limit,rating})
     .then(gifs =>{
         setGifs(gifs)
         setLoading(false)
         //guardamos la keyword de la ultima busqueda en el localStorage
         localStorage.setItem('lastKeyword',keywordToUse)
     })
-},[keyword,setGifs,keywordToUse])//segundo argumento son la lista de dependencias del efecto, si no se pone nada, se ejecuta solo la primera vez,
+},[keyword,setGifs,keywordToUse,rating])//segundo argumento son la lista de dependencias del efecto, si no se pone nada, se ejecuta solo la primera vez,
 //poner keyword hace que cada que se actualice keyword se renderice nuevamente el coponente 
 useEffect(function(){
     if(page === INITIAL_PAGE)return
     setLoadingNextpage(true)
 
-    getGifs({keyword:keywordToUse, page, limit})
+    getGifs({keyword:keywordToUse, page, limit,rating})
     .then(nextGifs =>{
         setGifs(prevGifs=>prevGifs.concat(nextGifs))
         setLoadingNextpage(false)
     })
-},[page,keywordToUse])
+},[page,keywordToUse,rating])
 return {loading, loadingNextPage, gifs,setPage}
 }

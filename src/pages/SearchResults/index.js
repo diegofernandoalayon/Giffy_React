@@ -11,8 +11,8 @@ import {Helmet} from 'react-helmet'
 export default function SearchResults({params}){
 
    
-    const {keyword,limit} = params
-    const {loading, gifs,setPage} = useGifs({keyword,limit})
+    const {keyword,limit,rating = 'g'} = params
+    const {loading, gifs,setPage} = useGifs({keyword,limit,rating})
     const externalRef = useRef()
     const {isNearScreen} = useNearScreen({externalRef: loading ? null:externalRef, once:false})
     //const handleNextPage = () => setPage(prevPage => prevPage + 1) // se podria hacer retornando el valor del hook
@@ -27,7 +27,7 @@ export default function SearchResults({params}){
     const debounceHandleNextPage =useCallback(debounce(()=> setPage(prevPage => prevPage + 1),500),[setPage])
 
     useEffect(function (){
-        console.log(isNearScreen)
+        // console.log(isNearScreen)
         if(isNearScreen) debounceHandleNextPage()
     },[debounceHandleNextPage,isNearScreen])
 
@@ -45,7 +45,7 @@ export default function SearchResults({params}){
                 <title>{title}</title>
                 <meta name="description" content={title} />
             </Helmet>
-            <SearchForm/>
+            <SearchForm initialKeyword={keyword} initalRating={rating} initialLimit={limit}/>
             <h3>
             {decodeURI(keyword)}
             </h3>
@@ -58,7 +58,6 @@ export default function SearchResults({params}){
                 </div>
             </div>
                 <div id="visor" ref={externalRef}></div>
-            {/* <button onClick={handleNextPage}>Get next page</button> */}
         </>
         
         
