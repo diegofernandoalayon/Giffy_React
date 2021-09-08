@@ -45,7 +45,7 @@ export default function SearchResults({params}){
                 <title>{title}</title>
                 <meta name="description" content={title} />
             </Helmet>
-            <SearchForm initialKeyword={keyword} initalRating={rating} initialLimit={limit}/>
+            <SearchForm initialKeyword={keyword} initialRating={rating} initialLimit={limit}/>
             <h3>
             {decodeURI(keyword)}
             </h3>

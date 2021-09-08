@@ -66,11 +66,11 @@
   /* flex-direction:initial; */
   align-items: flex-start;
   /* flex-wrap: wrap; */
-  width: 100%;
+  width: 80%;
   
 }
 .List{
- flex:95% ;
+ flex:100% ;
 }
 /* .ListOfGifs{
   width: 100%;
