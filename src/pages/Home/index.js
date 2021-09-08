@@ -28,7 +28,7 @@ export default function Home(){
         <div className='content'>
             <div className="List">
         
-            <h4>Ultimas Busquedas</h4>
+            <h3>Ultimas Busquedas</h3>
             <ListOfGifs gifs={gifs} /> {/*componente para listas los gifs*/}
             </div>
             {/* <Category name='Los Gifs más populares' options={POPULAR_GIFS}/>  */}
