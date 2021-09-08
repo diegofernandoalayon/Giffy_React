@@ -10,7 +10,7 @@ import {Link} from 'wouter'
                {
                 options.map((single)=>(
                 <li key={single}>
-                    <Link to={`/search/${single}/20`}>Gifs de {single}</Link>
+                    <Link to={`/search/${single}/20`}>{single}</Link>
                 </li>      
                 ))
                }
