@@ -14,10 +14,6 @@ export default function Home(){
     
     const {loading, gifs} = useGifs()
 
-   
-    
- 
-   
     return(
         
         <>
