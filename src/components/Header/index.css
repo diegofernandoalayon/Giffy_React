@@ -1,0 +1,13 @@
+.gf-header{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+.gf-header a{
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+}
+.gf-header a:hover{
+    text-decoration: underline;
+}

@@ -116,6 +116,7 @@ a{
   .content{
     flex-direction: initial;
     flex-wrap: wrap;
+    width:100%;
   }
   .App-category{
     margin-top: 4%;

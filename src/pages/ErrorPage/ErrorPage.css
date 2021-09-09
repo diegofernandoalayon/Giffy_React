@@ -1,0 +1,12 @@
+.error-btn{
+    width: 80%;
+    background-color: rgba(127, 225, 250, 0.829);
+    border-radius: 5px;
+    border: none;
+    margin-top: 20px;
+    font-size: 24px;
+}
+.error-btn:hover{
+    background-color: rgba(16, 207, 255, 0.829);
+    color: black;
+}
