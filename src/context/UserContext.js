@@ -4,7 +4,8 @@ const Context = React.createContext({})
 
 export function UserContextProvider({children}){
 
-    const [jwt, setJWT] = useState(null) //jwt -> javaScript web token
+    const [jwt, setJWT] = useState(()=>window.sessionStorage.getItem('jwt')) //jwt -> javaScript web token// se puede poner una funcion para poner estado inicial, ya que esta funcion se ejecuta una vez
+
     //de esta forma podemos usar el context para tenerlo como global, y usar el estado del context 
     return <Context.Provider value={{jwt,setJWT}}>
         {children}
