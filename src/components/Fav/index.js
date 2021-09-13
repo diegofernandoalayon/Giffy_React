@@ -3,11 +3,12 @@ import { useLocation } from "wouter";
 import "./Fav.css";
 
 export default function Fav({ id }) {
-  const { isLogged } = useUser();
+  const { isLogged,fav } = useUser();
   const [, pushLocation] = useLocation();
   const handleClick = () => {
     if (!isLogged) return pushLocation("/login");
-    alert(id);
+  fav({id});
+    // alert(id);
   };
   return (
     <button className='gf-Fav' onClick={handleClick}>

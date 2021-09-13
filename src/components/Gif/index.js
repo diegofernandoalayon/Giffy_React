@@ -11,7 +11,7 @@ import Fav from '../Fav'
           </div>
         <Link to={`/gif/${id}`} className='Gif-link'>
             <h4>{title}</h4>
-            <img loading='lazy' alt={title} src={url} onError="this.remove()"/>
+            <img loading='lazy' alt={title} src={url}/>
           </Link>
         </div>
     )
