@@ -2,6 +2,7 @@ import useUser from "../../hooks/useUser";
 import { useLocation } from "wouter";
 import "./Fav.css";
 
+
 export default function Fav({ id }) {
   const { isLogged,addFav,favs } = useUser();
   const [, pushLocation] = useLocation();
@@ -17,16 +18,17 @@ export default function Fav({ id }) {
     emoji
   ] = isFaved ?[
     'Remove Gif from favorites',
-    '❌'
+    '/heart.png'
   ]:[
     'Add Gif to favorites',
-    '❤️'
+    '/like.png'
   ]
   return (
     <button className='gf-Fav' onClick={handleClick}>
-      <span role="img" aria-label={label}>
-        {emoji}
-      </span>
+      <img src={emoji} alt={label} width='20px'/>
+      {/* <span role="img" aria-label={label} src={emoji}>
+       
+      </span> */}
     </button>
   );
 }

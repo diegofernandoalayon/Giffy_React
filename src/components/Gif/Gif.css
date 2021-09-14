@@ -1,23 +1,4 @@
-/* .Gif{
-    border: 1px solid #eee;
-    border-radius: 6px;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    text-decoration: none;
-    margin: 16px;
-    padding: 32px;
-    width: 90%;
-}
-.Gif h4{
-    margin: 0;
-}
-.Gif img{
-    object-fit: contain;
-}
-i {
-    font-size: 80px;
-} */
+
 .Gif {
     --gifShadow-size : var(--gridList-gap, 6px);
     margin-bottom: 0.5em !important;
@@ -33,7 +14,7 @@ i {
     right: 8px;
     z-index: 1;
     
-    /* right: 8px; */
+  
     width: 30px;
     z-index: 1;
   }
@@ -56,19 +37,14 @@ i {
     position: absolute;
   }
   
-  .Gif img {
+  .Gif .imagen {
     width: 100%;
     object-fit: cover;
     vertical-align: top;
     border-radius: 8px;
     
   }
-  .Gif:nth-child(2n) img:hover{
-    border: 4px solid rgba(255,0,0,0.4);
-  }
-  .Gif:nth-child(2n-1) img:hover{
-    border: 4px solid rgba(100,100,100,0.4);
-  }
+ 
   
   i {
     font-size: 80px;
@@ -86,19 +62,19 @@ i {
     object-fit: cover;
   }
   
-  .Gif:nth-child(5n + 1) img {
+  .Gif:nth-child(5n + 1) .imagen {
     background-color: var(--brand-color_1);
   }
-  .Gif:nth-child(5n + 2) img {
+  .Gif:nth-child(5n + 2) .imagen {
     background-color: var(--brand-color_2);
   }
-  .Gif:nth-child(5n + 3) img {
+  .Gif:nth-child(5n + 3) .imagen {
     background-color: var(--brand-color_3);
   }
-  .Gif:nth-child(5n + 4) img {
+  .Gif:nth-child(5n + 4) .imagen {
     background-color: var(--brand-color_4);
   }
-  .Gif:nth-child(5n + 5) img {
+  .Gif:nth-child(5n + 5) .imagen {
     background-color: var(--brand-color_5);
   }
   
