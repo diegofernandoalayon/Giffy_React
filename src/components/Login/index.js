@@ -3,14 +3,17 @@ import { useLocation } from "wouter";
 import useUser from "../../hooks/useUser";
 import './Login.css'
 
-export default function Login() {
+export default function Login({onLogin}) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState(""); 
   const [,pushLocation] = useLocation()
   const {login,isLogged,isLoginLoading,hasLoginError} = useUser()
 
   useEffect(()=>{
-    if(isLogged) pushLocation('/')
+    if(isLogged) {
+      pushLocation('/')
+      onLogin && onLogin()
+    }
   },[isLogged])
 
   const handleSubmit = (e) => {

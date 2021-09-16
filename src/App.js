@@ -12,6 +12,7 @@ import {GifsContextProvider} from './context/GifsContext'
 import ErrorPage from "./pages/ErrorPage";
 import "./App.css";
 import Login from "./pages/Login";
+import RegisterPage from "./pages/Register";
 
 function App() {
   return (
@@ -44,6 +45,10 @@ function App() {
               <Route 
                 component = {Login}
                 path='/login'
+              />
+              <Route 
+                component = {RegisterPage}
+                path='/register'
               />
               <Route
                 component ={ErrorPage}

@@ -7,6 +7,7 @@
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
     "dotenv": "^8.2.0",
+    "formik": "^2.2.9",
     "intersection-observer": "^0.12.0",
     "just-debounce-it": "^1.5.0",
     "react": "^17.0.2",

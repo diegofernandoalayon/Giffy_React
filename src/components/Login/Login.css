@@ -1,6 +1,7 @@
 .form{
     max-width: 320px;
     width: 100%;
+    min-height: 100vh;
 }
 .form label{
     display: block;
@@ -15,6 +16,15 @@
     line-height: 2;
     width: 100%;
     padding: 0 8px;
+}
+.form-error{
+    color: red;
+    font-size: 12px;
+    margin-top: -12px;
+    display: block;
+}
+form input.error{
+    border: 2px solid rgba(247, 22, 22, 0.514)
 }
 .btn{
     font-size: 18px;
