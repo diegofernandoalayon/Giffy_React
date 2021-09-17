@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import registerService from "../../services/register";
-import {useForm} from 'react-hook-form'
+import register from "../../services/register";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 
 const validateFields = values =>{
     const errors = {};
@@ -16,7 +16,7 @@ const validateFields = values =>{
     return errors;
 }
 const handleSubmit = (values, {setFieldError})=>{
-    return registerService(values).catch(() => {
+    return register(values).catch(() => {
         setFieldError("username", "This username is not valid");
       });
 }
@@ -26,10 +26,6 @@ const initialValues = {
   }
 
 export default function Register() {
-    const {handleSubmit, register, errors} = useForm()
-    const onSubmit = (values) =>{
-        console.log(values)
-    }
     const [registered, setRegistered] = useState(false)
 
     if(registered){
@@ -39,15 +35,7 @@ export default function Register() {
     }
   return (
     <>
-     
-    </>
-  );
-}
-
-
-/**
- * 
- *  <Formik
+      <Formik
         initialValues={initialValues}
         validate={validateFields}
         onSubmit={
@@ -88,4 +76,6 @@ export default function Register() {
           )
         }
       </Formik>
- */
+    </>
+  );
+}
