@@ -1,91 +1,41 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import registerService from "../../services/register";
-import {useForm} from 'react-hook-form'
-
-const validateFields = values =>{
-    const errors = {};
-    if (!values.username) {
-      //agregando validacion
-      errors.username = "Required username";
-    }
-    if (!values.password) {
-      errors.password = "Required password";
-    } else if (values.password.length < 3) {
-      errors.password = "Length must be greater than 3";
-    }
-    return errors;
-}
-const handleSubmit = (values, {setFieldError})=>{
-    return registerService(values).catch(() => {
-        setFieldError("username", "This username is not valid");
-      });
-}
-const initialValues = {
-    username: "",
-    password: "",
-  }
+import { useForm} from 'react-hook-form'
 
 export default function Register() {
-    const {handleSubmit, register, errors} = useForm()
-    const onSubmit = (values) =>{
-        console.log(values)
-    }
-    const [registered, setRegistered] = useState(false)
+  const {handleSubmit, register, formState:{errors}} = useForm()
 
-    if(registered){
-        return<h4>
-            Congratulations ✔️! You've been successfully registered!
-        </h4>
-    }
+  const [registered, setRegistered] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
+  const onSubmit = values => {
+    setIsSubmitting(true)
+    console.log(values)
+    registerService(values)
+      .then(() => {
+        setRegistered(true)
+        setIsSubmitting(false)
+      })
+  }
+
+  if (registered) {
+    return <h4>
+      Congratulations ✅! You've been successfully registered!
+    </h4>
+  }
+
   return (
     <>
-     
+      <form className='form' onSubmit={handleSubmit(onSubmit)}>
+        <input className={errors.username ? 'error' : ''} defaultValue='' {...register("username",{ required: true})} placeholder='Put here the username' />
+        {errors.username && <span className='form-error'>This field is required</span>}
+        <input className={errors.password ? 'error' : ''} type='password' defaultValue='' {...register("password",{required: true, minLength: 3})} placeholder='Put here the password'/>
+        {errors.password && <span className='form-error'>Length must be greater than 3</span>}
+
+        <button className="btn" disabled={isSubmitting}>
+          Registrarse
+        </button>
+      </form>
     </>
   );
 }
-
-
-/**
- * 
- *  <Formik
-        initialValues={initialValues}
-        validate={validateFields}
-        onSubmit={
-            (values, {setFieldError})=>{
-                return register(values)
-                .then(()=>{
-                    setRegistered(true)
-                })
-                .catch(() => {
-                    setFieldError("username", "This username is not valid");
-                  });
-            }
-        }
-      >
-        {
-          //recibe una render Prop
-          ({errors,isSubmitting }) => (
-            <Form className="form" >
-              <Field
-                name="username"
-                placeholder="Put here the username"
-                className={errors.username ? "error" : null}
-              />
-              <ErrorMessage className='form-error' name='username' component='small'/>
-             
-              <Field
-                name="password"
-                placeholder="Put here the password"
-                className={errors.password?'error':null}
-                type='password'
-              />
-              <ErrorMessage className='form-error' name='password' component='small'/>
-              <button className="btn" disabled={isSubmitting}>
-                Registrarse
-              </button>
-             
-            </Form>
-          )
-        }
-      </Formik>
- */
