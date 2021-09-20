@@ -19,18 +19,21 @@ height: 100vh;
     width: 90%;
 }
 `
-const errorBtn = css`
-width: 80%;
-background-color: rgba(127, 225, 250, 0.829);
-border-radius: 5px;
-border: none;
-margin-top: 20px;
-font-size: 24px;
-&:hover{
-    background-color: rgba(16, 207, 255, 0.829);
-    color: black;
+const errorBtn = css({
+
+  width: '80%',
+  backgroundColor: 'rgba(127, 225, 250, 0.829)',
+  borderRadius: '5px',
+  border: 'none',
+  marginTop: '20px',
+  fontSize: '24px',
+  '&:hover':{
+    backgroundColor: 'rgba(16, 207, 255, 0.829)',
+    color: 'black',
 }
-`
+
+})
+
 const img = css`
 width: 80%;
 `
