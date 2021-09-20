@@ -1,8 +1,9 @@
 
-import { Link } from "wouter";
+
 // import "./ErrorPage.css";
 import { css,jsx } from "@emotion/css";
 import { Helmet } from "react-helmet";
+import Button from "../../components/Button";
 
 const gifsError = [
     "KlrMS4vyq5KSY",
@@ -52,9 +53,7 @@ export default function ErrorPage() {
         </Helmet>
       <h2>Error 404</h2>
       <img src={randomImage()} className={img} alt="error image" />
-      <Link to="/">
-        <button className={errorBtn}>Home</button>
-      </Link>
+      <Button href='/'>Go to home</Button>
     </div>
   );
 }
