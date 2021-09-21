@@ -70,7 +70,7 @@
   
 }
 .List{
- flex:100% ;
+ flex:95% ;
 }
 /* .ListOfGifs{
   width: 100%;
@@ -89,22 +89,21 @@
   /* width: 40%; */
 
 }
-.App-category h3{
+/* .App-category h3{
   margin-top: 0;
-  /* color: red; */
-}
-.App-category a{
+} */
+/* .App-category a{
   color: whitesmoke;
 
-}
-.App-category a:hover{
+} */
+/* .App-category a:hover{
   color: rgb(182, 23, 23);
-}
+} */
 
-a{
+/* a{
   color: #09f;
   font-size: 14px;
-}
+} */
 #logo{
   color: coral;
   font-family: 'Lobster', cursive;
@@ -131,7 +130,7 @@ a{
   }
   .App-category ul li{
     display:inline-block;
-    margin-right: 4%;
+    /* margin-right: 4%; */
   }
   .ListOfGifs{
     margin: 0 auto;

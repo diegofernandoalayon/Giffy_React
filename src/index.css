@@ -57,18 +57,18 @@ code {
 }
 
 
-a {
+/* a {
   color: #09f;
   font-size: 32px;
   text-decoration: none;
-}
+} */
 
-ul {
+/* ul {
   list-style: none;
   margin: 0;
   padding: 0;
   text-align:left;
-}
+} */
 
 
 /* -------------------- rf-layout  - Component / header */

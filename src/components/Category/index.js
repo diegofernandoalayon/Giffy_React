@@ -1,20 +1,21 @@
 import React from 'react'
 import {Link} from 'wouter'
+import {CategoryTitle,CategoryLink, CategoryList,CategoryListItems} from './styles'
 
 
  function Category({name,options=[]}){
     return(
        <>
-           <h3>{name}</h3>
-           <ul>
+           <CategoryTitle>{name}</CategoryTitle>
+           <CategoryList>
                {
-                options.map((single)=>(
-                <li key={single}>
-                    <Link to={`/search/${single}/20`}>{single}</Link>
-                </li>      
+                options.map((single,index)=>(
+                <CategoryListItems key={single} index={index}>
+                    <CategoryLink to={`/search/${single}/20`} index={index}>{single}</CategoryLink>
+                </CategoryListItems>      
                 ))
                }
-           </ul>
+           </CategoryList>
        </>
         )
 }
